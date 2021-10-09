@@ -26,6 +26,8 @@ import Page23 from "./page_23/index";
 import Page13 from "./page_13/index";
 import Page24 from "./page_24/index";
 import Page25 from "./page_25/index";
+import Page26 from "./page_26/index";
+import Page27 from "./page_27/index";
 
 const Pages = (props) => {
 	const { onPushAction, currentPage, audioPlaying } = props;
@@ -141,6 +143,24 @@ const Pages = (props) => {
 		case 25:
 			Page = (
 				<Page25
+					currentPage={currentPage}
+					onPushAction={onPushAction}
+					audioPlaying={audioPlaying}
+				/>
+			);
+			break;
+		case 26:
+			Page = (
+				<Page26
+					currentPage={currentPage}
+					onPushAction={onPushAction}
+					audioPlaying={audioPlaying}
+				/>
+			);
+			break;
+		case 27:
+			Page = (
+				<Page27
 					currentPage={currentPage}
 					onPushAction={onPushAction}
 					audioPlaying={audioPlaying}
