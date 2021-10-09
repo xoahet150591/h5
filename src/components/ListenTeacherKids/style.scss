@@ -3,6 +3,9 @@
         .page-wrapper__content--box-empty1{
             width: 50%;
             margin: 20px 30px;
+            @media screen and (max-width: 700px) {
+                margin: 0px 20px;
+            }
         }
         .page-content{
             margin-left: 30px;
@@ -74,16 +77,28 @@
     &.pageMD17-wrapper{
         .img-object{
             transform: translate(40px,-95px) !important;
+            @media screen and (max-width: 1100px) {
+                transform: translate(80px,-25px) !important;
+            }
+            @media screen and (max-width: 700px) {
+                transform: translate(40px,-35px) !important;
+            }
             img{
                 max-width: 100%;
                 @media ( min-width :735px) and (max-width: 1100px) {
-                    max-width: 80% !important;
+                    max-width: 70% !important;
+                }
+                @media screen and (max-width: 700px) {
+                    width: 60% !important; 
                 }
             }
         }
         .img-text{
             @media ( min-width :735px) and (max-width: 1100px) {
-                transform: translate(30px,30px) !important;
+                transform: translate(30px,70px) !important;
+            }
+            @media screen and (max-width: 700px) {
+                transform: translate(10px,40px) !important;
             }
         }
     }

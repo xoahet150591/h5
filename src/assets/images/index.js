@@ -196,10 +196,10 @@ const images = {
     // page 19
     bgPage16Demo,
     bgPage16plus,
+    bgPage17,
     bgPage18,
     bgPage19,
     // page 21
-    bgPage20,
     bgPage21,
     bgPage20,
     bgPage21,
