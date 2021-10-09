@@ -4,6 +4,11 @@ import page3AudioBg from "./page_3/talk.mp3";
 import page4AudioBg from "./page_4/sit.mp3";
 import page5AudioBg from "./page_5/stand.mp3";
 
+import page16AudioBg from "./page_16/pencil.mp3";
+import page17AudioBg from "./page_17/pen.mp3";
+import page18AudioBg from "./page_18/crayon.mp3";
+import page19AudioBg from "./page_19/marker.mp3";
+
 import audioFalse from "./common/false.mp3";
 import audioTrue from "./common/true.mp3";
 import audioGit from "./common/git.mp3";
@@ -269,6 +274,26 @@ const audios = [
 		id: "talkPage13",
 		audio: talkPage13,
 		page: 13,
+	},
+	{
+		id: "page20_audio",
+		audio: page16AudioBg,
+		page: 20,
+	},
+	{
+		id: "page21_audio",
+		audio: page17AudioBg,
+		page: 21,
+	},
+	{
+		id: "page22_audio",
+		audio: page18AudioBg,
+		page: 22,
+	},
+	{
+		id: "page23_audio",
+		audio: page19AudioBg,
+		page: 23,
 	},
 ];
 

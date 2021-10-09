@@ -198,7 +198,6 @@ const images = {
 		//  page 17
 		// page 18
 		bgPage13,
-
 		// page 19
 		bgPage16Demo,
 		bgPage16plus,
@@ -216,7 +215,6 @@ const images = {
 			id: "kids",
 			url: kids,
 		},
-
 		page10ChildConver: {
 			id: "page10ChildConver",
 			url: page10ChildConver,
