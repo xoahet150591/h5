@@ -5,9 +5,9 @@ const initialState = {
 	isLoading: false,
 	isShowAnswer: false,
 	isPlayRecord: false,
-	currentPage: 0,
+	currentPage: 25,
 	currentStep: 0,
-	urlBackground: images.background[0],
+	urlBackground: images.background[25],
 	isAudioEndOrPause: false,
 	isShowNextIcon: false,
 	page10: {

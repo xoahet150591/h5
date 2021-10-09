@@ -36,6 +36,7 @@ import bgPage16plus from "./page_16/bg-17.png";
 import bgPage17 from "./page_17/bg-18.png";
 import bgPage18 from "./page_18/bg-19.png";
 import bgPage19 from "./page_19/bg-20.png";
+import bgPage25 from "./page_25/page25-bg.png";
 
 import teacher from "./page_16/teacher-16.png";
 import title17 from "./page_16/title.png";
@@ -113,6 +114,41 @@ import icTalk from "./page_13/icon-talk.png";
 import textTalk from "./page_13/text-talk.png";
 import icStand from "./page_14/icon-stand.png";
 import textStand from "./page_14/text-stand.png";
+import icon1 from "./page_25/1.png";
+import icon2 from "./page_25/2.png";
+import icon3 from "./page_25/3.png";
+import icon4 from "./page_25/4.png";
+import icon5 from "./page_25/5.png";
+import icon6 from "./page_25/6.png";
+import icon7 from "./page_25/7.png";
+import icon8 from "./page_25/8.png";
+import icon9 from "./page_25/9.png";
+import icon10 from "./page_25/10.png";
+import icon11 from "./page_25/11.png";
+import icon12 from "./page_25/12.png";
+import icon13 from "./page_25/13.png";
+import icon14 from "./page_25/14.png";
+import icon15 from "./page_25/15.png";
+import icon16 from "./page_25/16.png";
+import icon17 from "./page_25/17.png";
+import icon18 from "./page_25/18.png";
+import icon19 from "./page_25/19.png";
+import icon20 from "./page_25/20.png";
+import icon21 from "./page_25/21.png";
+import icon22 from "./page_25/22.png";
+import icon23 from "./page_25/23.png";
+import icon24 from "./page_25/24.png";
+import icon25 from "./page_25/25.png";
+import icon26 from "./page_25/26.png";
+import icon27 from "./page_25/27.png";
+import icon28 from "./page_25/28.png";
+import icon29 from "./page_25/29.png";
+import icon30 from "./page_25/30.png";
+import findTheFourKeys from "./page_25/find-the-four-keys.png";
+import crayon from "./page_25/crayon.png";
+import marker from "./page_25/marker.png";
+import pen from "./page_25/pen.png";
+import pencil from "./page_25/pencil.png";
 
 import kidsPage2 from "./page_2/kids-page2.png";
 import lisenPage2 from "./page_2/listen.png";
@@ -208,7 +244,7 @@ const images = {
 		bgPage21,
 		bgPage20,
 		bgPage21,
-		bgPage22,
+		bgPage25,
 	],
 	people: {
 		kids: {
@@ -399,6 +435,41 @@ const images = {
 	},
 	common: {
 		unit2,
+	},
+	page25: {
+		icons: [
+			icon1,
+			icon2,
+			icon3,
+			icon4,
+			icon5,
+			icon6,
+			icon7,
+			icon8,
+			icon9,
+			icon10,
+			icon11,
+			icon12,
+			icon13,
+			icon14,
+			icon15,
+			icon16,
+			icon17,
+			icon18,
+			icon19,
+			icon20,
+			icon21,
+			icon22,
+			icon23,
+			icon24,
+			icon25,
+			icon26,
+			icon27,
+			icon28,
+			icon29,
+			icon30,
+		],
+		texts: [findTheFourKeys, pen, pencil, marker, crayon],
 	},
 };
 

@@ -160,15 +160,15 @@ const Home = () => {
 				dispatch(setIsPlayRecord(true));
 				dispatch(setCurrentStep(currentStep + 1));
 				break;
-			case 25:
-				window.bridge.pushRecord({
-					type: "play_audio",
-					url: audios.find((item) => item.id === "page25_voice").audio,
-					id: "page25_voice",
-				});
-				dispatch(setIsPlayRecord(true));
-				dispatch(setCurrentStep(currentStep + 1));
-				break;
+			// case 25:
+			// 	window.bridge.pushRecord({
+			// 		type: "play_audio",
+			// 		url: audios.find((item) => item.id === "page25_voice").audio,
+			// 		id: "page25_voice",
+			// 	});
+			// 	dispatch(setIsPlayRecord(true));
+			// 	dispatch(setCurrentStep(currentStep + 1));
+			// 	break;
 			default:
 				dispatch(setIsPlayRecord(false));
 				break;

@@ -77,6 +77,12 @@ import page22_voice from "./page_22/page22-voice.mp3";
 // audio page 24
 import page24_voice from "./page_24/page-24.mp3";
 
+// audio page 25
+import markerPage25 from "./page_25/marker.mp3";
+import pencilPage25 from "./page_25/penccil.mp3";
+import penPage25 from "./page_25/pen.mp3";
+import crayonPage25 from "./page_25/crayan.mp3";
+
 const audios = [
 	audioBg,
 	// audio false
@@ -294,6 +300,26 @@ const audios = [
 		id: "page23_audio",
 		audio: page19AudioBg,
 		page: 23,
+	},
+	{
+		id: "markerPage25",
+		audio: markerPage25,
+		page: 25,
+	},
+	{
+		id: "pencilPage25",
+		audio: pencilPage25,
+		page: 25,
+	},
+	{
+		id: "penPage25",
+		audio: penPage25,
+		page: 25,
+	},
+	{
+		id: "crayonPage25",
+		audio: crayonPage25,
+		page: 25,
 	},
 ];
 
