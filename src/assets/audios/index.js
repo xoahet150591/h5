@@ -1,4 +1,4 @@
-// Phần này là của Phương ninh có thể sử dụng 
+// Phần này là của Phương ninh có thể sử dụng
 import page2AudioBg from "./page_2/sing.mp3";
 import page3AudioBg from "./page_3/talk.mp3";
 import page4AudioBg from "./page_4/sit.mp3";
@@ -21,8 +21,6 @@ import iHaveAScrissor from "./page_1/scrissor.mp3";
 import iHaveAGlue from "./page_1/glue.mp3";
 import iHaveAPaper from "./page_1/page.mp3";
 
-
-
 // audio page 6
 import sing from "./page_6/sing.mp3";
 import sit from "./page_6/sit.mp3";
@@ -36,19 +34,18 @@ import paint from "./page_7/paint.mp3";
 // audio page 8
 import whatDoYouHave1 from "./page_8/whatDoYouHave.mp3";
 
-
 // audio page 9
 
 // audio page 10
 
-
 // audio page 11
-
+import singPage11 from "./page_11/sing.mp3";
 
 // audio page 12
 import pencil from "./page_12/pencil.mp3";
+import sitPage12 from "./page_12/sit.mp3";
 //audio page 13
-
+import talkPage13 from "./page_13/talk.mp3";
 import pen from "./page_13/pen.mp3";
 //audio page 14
 
@@ -57,7 +54,6 @@ import crayon from "./page_14/crayon.mp3";
 //audio page 15
 
 import marker from "./page_15/marker.mp3";
-
 
 //audio page 16
 import what from "./page_16/what.mp3";
@@ -79,7 +75,7 @@ import page24_voice from "./page_24/page-24.mp3";
 const audios = [
 	audioBg,
 	// audio false
-	
+
 	{
 		id: "audioFalse",
 		audio: audioFalse,
@@ -188,8 +184,6 @@ const audios = [
 		page: 16,
 	},
 
-
-
 	{
 		id: "keo",
 		audio: keo,
@@ -209,32 +203,32 @@ const audios = [
 		id: "nenPikachu",
 		audio: nenPikachu,
 	},
-// page 6
-{
-	id: "sing",
-	audio: sing,
-	page: 6,
-},
-{
-	id: "sit",
-	audio: sit,
-	page: 6,
-},
-{
-	id: "clap",
-	audio: clap,
-	page: 6,
-},
-{
-	id: "stand",
-	audio: stand,
-	page: 6,
-},
-{
-	id: "talk",
-	audio: talk,
-	page: 6,
-},
+	// page 6
+	{
+		id: "sing",
+		audio: sing,
+		page: 6,
+	},
+	{
+		id: "sit",
+		audio: sit,
+		page: 6,
+	},
+	{
+		id: "clap",
+		audio: clap,
+		page: 6,
+	},
+	{
+		id: "stand",
+		audio: stand,
+		page: 6,
+	},
+	{
+		id: "talk",
+		audio: talk,
+		page: 6,
+	},
 
 	{
 		id: "page2_sing",
@@ -260,6 +254,21 @@ const audios = [
 		id: "page24_voice",
 		audio: page24_voice,
 		page: 24,
+	},
+	{
+		id: "singPage11",
+		audio: singPage11,
+		page: 11,
+	},
+	{
+		id: "sitPage12",
+		audio: sitPage12,
+		page: 12,
+	},
+	{
+		id: "talkPage13",
+		audio: talkPage13,
+		page: 13,
 	},
 ];
 

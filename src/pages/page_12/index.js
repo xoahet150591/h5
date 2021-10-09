@@ -1,39 +1,44 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Container from "components/Container";
 import images from "assets/images";
 import "./styles.scss";
+import { setIntervalControlClass } from "helper/setTimeOutControlClass";
 
-const Page11 = (props) => {
+const Page12 = (props) => {
 	const { currentPage, onPushAction } = props;
+
+	const [isShowTextSing, setIsShowTextSing] = useState(false);
+
+	useEffect(() => {
+		setIntervalControlClass("icon-sit", "zoom", 2000);
+	}, []);
 
 	const renderContent = () => {
 		return (
-			<div className="page11-wrapper">
-				<div className="page11-wrapper__content">
-					<img
-						className="item"
-						alt={images.people.page11ChildConver.url}
-						src={images.people.page11ChildConver.url}
-					/>
-					<div className="page11-wrapper__content--answer">
+			<div className="page12-wrapper">
+				<img
+					className="title-screen"
+					src={images.icons.icMiniGame12}
+					alt={images.icons.icMiniGame12}
+				/>
+				<div className="page12-wrapper__content">
+					<div className="page12-wrapper__content--wrapper">
 						<img
-							className="item"
-							alt={images.icons.paperIcon}
-							src={images.icons.paperIcon}
-							onClick={(e) => onPushAction(e, "play_audio", "audioFalse")}
+							className="icon-sit"
+							src={images.icons.icSit}
+							alt={images.icons.icSit}
+							onClick={(e) => {
+								setIsShowTextSing(true);
+								onPushAction(e, "play_audio", "sitPage12");
+							}}
 						/>
-						<img
-							className="item"
-							alt={images.icons.glueIcon}
-							src={images.icons.glueIcon}
-							onClick={(e) => onPushAction(e, "play_audio", "audioFalse")}
-						/>
-						<img
-							className="item"
-							alt={images.icons.paintIcon}
-							src={images.icons.paintIcon}
-							onClick={(e) => onPushAction(e, "play_audio", "paint")}
-						/>
+						{isShowTextSing ? (
+							<img
+								src={images.texts.textSit.url}
+								alt={images.texts.textSit.url}
+								className="text-sit"
+							/>
+						) : null}
 					</div>
 				</div>
 			</div>
@@ -43,4 +48,4 @@ const Page11 = (props) => {
 	return <Container content={renderContent()} currentPage={currentPage} />;
 };
 
-export default React.memo(Page11);
+export default React.memo(Page12);

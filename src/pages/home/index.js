@@ -139,7 +139,14 @@ const Home = () => {
 					id: "audioBg",
 				});
 				dispatch(setIsPlayRecord(true));
-				dispatch(setCurrentStep(currentStep + 1));
+				break;
+			case 10:
+				window.bridge.pushRecord({
+					type: "play_audio",
+					url: audios.find((item) => item.id === "audioBg").audio,
+					id: "audioBg",
+				});
+				dispatch(setIsPlayRecord(true));
 				break;
 			case 24:
 				for (const v of window.bridge?._prevRecordStack) {

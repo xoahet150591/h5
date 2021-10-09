@@ -5,11 +5,15 @@ const initialState = {
 	isLoading: false,
 	isShowAnswer: false,
 	isPlayRecord: false,
-	currentPage: 0,
+	currentPage: 13,
 	currentStep: 0,
-	urlBackground: images.background[0],
+	urlBackground: images.background[13],
 	isAudioEndOrPause: false,
 	isShowNextIcon: false,
+	page10: {
+		locationX: "52%",
+		locationY: "-6%",
+	},
 };
 
 export const slice = createSlice({
@@ -45,9 +49,13 @@ export const slice = createSlice({
 			state.isAudioEndOrPause = payload;
 		},
 		setIsShowNextIcon: (state, action) => {
-			console.log(12121213);
 			const { payload } = action;
 			state.isShowNextIcon = payload;
+		},
+		configPage10: (state, action) => {
+			const { locationX, locationY } = action.payload;
+			state.page10.locationX = locationX;
+			state.page10.locationY = locationY;
 		},
 	},
 });
@@ -61,6 +69,7 @@ export const {
 	setUrlBackground,
 	setIsAudioEndOrPause,
 	setIsShowNextIcon,
+	configPage10,
 } = slice.actions;
 
 export default slice.reducer;
