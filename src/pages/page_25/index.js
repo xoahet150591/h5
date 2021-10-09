@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Container from "components/Container";
 import images from "assets/images";
 import "./styles.scss";
@@ -7,8 +7,15 @@ import { setIntervalControlClass } from "helper/setTimeOutControlClass";
 const Page25 = (props) => {
 	const { currentPage, onPushAction } = props;
 
-	useEffect(() => {
-		setIntervalControlClass("icon-sing", "zoom", 2000);
+	// useEffect(() => {
+	// 	setIntervalControlClass("icon-sing", "zoom", 2000);
+	// }, []);
+
+	const handleAddClass = useCallback((ele) => {
+		const e = document.querySelectorAll(ele);
+		for (const i of e) {
+			setIntervalControlClass(i, "zoom", 2000);
+		}
 	}, []);
 
 	const listImage = images.page25.icons.map((item, index) => {
@@ -34,10 +41,11 @@ const Page25 = (props) => {
 				key={`${index}`}
 				src={item}
 				alt={item}
-				className="table__item"
+				className={`table__item ${audio}`}
 				data-id={audio}
 				onClick={(e) => {
 					const audioId = e.target.dataset.id;
+					handleAddClass(audio);
 					onPushAction(e, "play_audio", audioId);
 				}}
 			/>

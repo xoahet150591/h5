@@ -37,6 +37,8 @@ import bgPage17 from "./page_17/bg-18.png";
 import bgPage18 from "./page_18/bg-19.png";
 import bgPage19 from "./page_19/bg-20.png";
 import bgPage25 from "./page_25/page25-bg.png";
+import bgPage26 from "./page_26/page26-bg.png";
+import bgPage27 from "./page_27/page27-bg.png";
 
 import teacher from "./page_16/teacher-16.png";
 import title17 from "./page_16/title.png";
@@ -149,6 +151,11 @@ import crayon from "./page_25/crayon.png";
 import marker from "./page_25/marker.png";
 import pen from "./page_25/pen.png";
 import pencil from "./page_25/pencil.png";
+import icCam from "./page_26/icCam.png";
+import icDau from "./page_26/icDau.png";
+import icDua from "./page_26/icDua.png";
+import icNho from "./page_26/icNho.png";
+import icPencil from "./page_27/pencil.png";
 
 import kidsPage2 from "./page_2/kids-page2.png";
 import lisenPage2 from "./page_2/listen.png";
@@ -208,6 +215,11 @@ import pencilTextPage12 from "./page_12/pencil-12.png";
 import penTextPage13 from "./page_13/pen-text.png";
 import crayonTextPage14 from "./page_14/crayon-text.png";
 import markerTextPage15 from "./page_15/marker.png";
+import iHaveAMarker from "./page_27/iHaveAMarker.png";
+import iHaveAPen from "./page_27/iHaveAPen.png";
+import iHaveAPencil from "./page_27/iHaveAPencil.png";
+import iHaveCrayon from "./page_27/iHaveCrayon.png";
+import titlePage27 from "./page_27/mini-game.png";
 
 const images = {
 	background: [
@@ -245,6 +257,8 @@ const images = {
 		bgPage20,
 		bgPage21,
 		bgPage25,
+		bgPage26,
+		bgPage27,
 	],
 	people: {
 		kids: {
@@ -322,6 +336,16 @@ const images = {
 		},
 	},
 	icons: {
+		titlePage27,
+		iHaveAMarker,
+		iHaveAPen,
+		iHaveAPencil,
+		iHaveCrayon,
+		icPencil,
+		icDua,
+		icDau,
+		icNho,
+		icCam,
 		sing,
 		button1,
 		button2,
