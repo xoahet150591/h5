@@ -29,6 +29,7 @@
             }
             .context-middle{
                 .img-object{
+                    cursor: pointer;
                     width: 450px;
                     transform: translate(60px,-45px);
                     @media screen and (max-width: 1100px) {
