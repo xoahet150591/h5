@@ -1,0 +1,63 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+.App {
+	max-width: 1366px;
+	width: 100vw;
+	margin: 0 auto;
+	height: 100vh;
+	overflow: hidden;
+	position: relative;
+}
+
+ul,
+li,
+p {
+	padding: 0px;
+	margin: 0px;
+}
+a {
+	text-decoration: none;
+}
+.scaleImage {
+	animation: scaleImage 1s forwards;
+}
+.pointer {
+	cursor: pointer;
+}
+.speaker {
+	margin-right: 20px;
+}
+.none {
+	display: none !important;
+}
+.absolute {
+	position: absolute;
+}
+.feel-icon {
+	position: absolute;
+	animation: feelIcon 1s forwards;
+}
+@keyframes feelIcon {
+	0% {
+		transform: scale(2);
+		display: block;
+	}
+	100% {
+		transform: scale(1);
+		display: none;
+	}
+}
+@keyframes scaleImage {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
