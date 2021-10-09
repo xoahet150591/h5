@@ -46,7 +46,6 @@ const Page25 = (props) => {
 
 	const listText = images.page25.texts.map((item, index) => {
 		const widthFirstItem = index === 0 ? "95%" : "70%";
-
 		return (
 			<img
 				key={`${index}`}
@@ -55,10 +54,6 @@ const Page25 = (props) => {
 				alt={item}
 				className="text-wrapper__item"
 				data-id={index}
-				onClick={(e) => {
-					console.log(e, "eeeee");
-					// onPushAction(e, "play_audio", audio);
-				}}
 			/>
 		);
 	});
