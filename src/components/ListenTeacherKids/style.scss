@@ -3,7 +3,7 @@
         .page-wrapper__content--box-empty1{
             width: 50%;
             margin: 20px 30px;
-            @media screen and (max-width: 700px) {
+            @media screen and (max-width: 900px) {
                 margin: 0px 20px;
             }
         }
@@ -12,36 +12,36 @@
             display: flex;
             justify-content: space-around;
             transform: translateY(100px);
-            @media screen and (max-width: 1100px) {
+            @media screen and (max-width: 900px) {
                 transform: translateY(30px);
             }
             .people-kids{
                 transform: translateY(50px);
-                @media screen and (max-width: 700px) {
+                @media screen and (max-width: 900px) {
                     transform: translate(20px,30px);
 
                 }
                 img{
-                    @media screen and (max-width: 700px) {
+                    @media screen and (max-width: 900px) {
                         width: 50%;
                     }
                 }
             }
             .context-middle{
                 .img-object{
-                    cursor: pointer;
                     width: 450px;
                     transform: translate(60px,-45px);
                     @media screen and (max-width: 1100px) {
                         transform: translate(70px,-45px);
                     }
-                    @media screen and (max-width: 700px) {
+                    @media screen and (max-width: 900px) {
                         transform: translate(20px,-35px);
                         width: 300px;
                     }
                     img{
+                        cursor: pointer;
                         max-width: 100%;
-                        @media screen and (max-width: 700px) {
+                        @media screen and (max-width: 900px) {
                             max-width: 70%;
                         }
                     }
@@ -49,16 +49,16 @@
                 .img-text{
                     width: 550px;
   
-                    @media screen and (max-width: 1100px) {
+                    @media screen and (max-width: 900px) {
                        transform: translate(70px,20px);
                     }
-                    @media screen and (max-width: 700px) {
+                    @media screen and (max-width: 900px) {
                         width: 300px;
                         transform: translate(0,0);
                     }
                     img{
                         max-width: 100%;
-                        @media screen and (max-width: 1100px) {
+                        @media screen and (max-width: 900px) {
                             width: 80%;
                             
                         }
@@ -67,7 +67,7 @@
             }
             .people-teacher{
                 img{
-                    @media screen and (max-width: 700px) {
+                    @media screen and (max-width: 900px) {
                         width: 50%;
                         transform: translateX(-20px);
                     }
@@ -81,7 +81,7 @@
             @media screen and (max-width: 1100px) {
                 transform: translate(80px,-25px) !important;
             }
-            @media screen and (max-width: 700px) {
+            @media screen and (max-width: 900px) {
                 transform: translate(40px,-35px) !important;
             }
             img{
@@ -89,7 +89,7 @@
                 @media ( min-width :735px) and (max-width: 1100px) {
                     max-width: 70% !important;
                 }
-                @media screen and (max-width: 700px) {
+                @media screen and (max-width: 900px) {
                     width: 60% !important; 
                 }
             }
@@ -98,7 +98,7 @@
             @media ( min-width :735px) and (max-width: 1100px) {
                 transform: translate(30px,70px) !important;
             }
-            @media screen and (max-width: 700px) {
+            @media screen and (max-width: 900px) {
                 transform: translate(10px,40px) !important;
             }
         }

@@ -31,6 +31,7 @@ import bgPage13 from "./page_13/bg-13.png";
 import bgPage1300 from "./page_13/page13-bg.png";
 import bgPage16Demo from "./page_16/bg-16.png";
 import bgPage14 from "./page_14/page14-bg1.png";
+import bgPage15 from "./page_15/bg-15.png";
 
 import bgPage16plus from "./page_16/bg-17.png";
 import bgPage17 from "./page_17/bg-18.png";
@@ -242,10 +243,12 @@ const images = {
 		bgPage14,
 		// page 15
 		// page 16
+		bgPage15,
+		bgPage13,
+		bgPage15,
 		bgPage13,
 		//  page 17
 		// page 18
-		bgPage13,
 		// page 19
 		bgPage16Demo,
 		bgPage16plus,
