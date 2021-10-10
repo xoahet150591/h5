@@ -158,6 +158,18 @@ import icDua from "./page_26/icDua.png";
 import icNho from "./page_26/icNho.png";
 import icPencil from "./page_27/pencil.png";
 
+import bgPage28 from "./page_28/page28-bg.png";
+import icPen from "./page_28/icPen.png";
+import titlePage28 from "./page_28/tittlePage28.png";
+
+import bgPage29 from "./page_29/page29-bg.png";
+import icMarker from "./page_29/icMarker.png";
+import titlePage29 from "./page_29/tittlePage29.png";
+import bgPage30 from "./page_30/page30-bg.png";
+import icCrayon from "./page_30/icCrayon.png";
+import titlePage30 from "./page_30/tittlePage30.png";
+
+
 import kidsPage2 from "./page_2/kids-page2.png";
 import lisenPage2 from "./page_2/listen.png";
 import singPage2 from "./page_2/sing.png";
@@ -257,11 +269,13 @@ const images = {
 		// page 21
 		bgPage20,
 		bgPage21,
-		bgPage20,
 		bgPage21,
-		bgPage25,
 		bgPage26,
 		bgPage27,
+		bgPage28,
+		bgPage29,
+		bgPage30,
+	
 	],
 	people: {
 		kids: {
@@ -339,6 +353,12 @@ const images = {
 		},
 	},
 	icons: {
+		icPen,
+		titlePage28,
+		icMarker,
+		icCrayon,
+		titlePage29,
+		titlePage30,
 		titlePage27,
 		iHaveAMarker,
 		iHaveAPen,

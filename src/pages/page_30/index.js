@@ -5,14 +5,14 @@ import { setIntervalControlClass } from "helper/setTimeOutControlClass";
 import WhatDoYouHave from "components/WhatDoYouHave/index";
 const page27 = [
 	{
-		clap : "clap",
-		active: true,
+		clap : "",
+		active: false,
 		image: images.icons.iHaveAPencil,
 
 	},
 	{
-		clap : "",
-		active: false,
+		clap : "clap",
+		active: true,
 		image: images.icons.iHaveAPen,
 		
 	},
@@ -29,15 +29,15 @@ const page27 = [
 		
 	}
 ]
-const Page27 = (props) => {
+const Page30 = (props) => {
 	const { currentPage, onPushAction } = props;
 	return <WhatDoYouHave
-		title = {images.icons.titlePage27}
+		title = {images.icons.titlePage30}
 		page27 = {page27}
 		currentPage  = {currentPage}
 		onPushAction  = {onPushAction}
-		icQues = {images.icons.icPencil}
+		icQues = {images.icons.icCrayon}
 	/>
 };
 
-export default React.memo(Page27);
+export default React.memo(Page30);
