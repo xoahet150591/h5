@@ -104,3 +104,18 @@
         }
     }
 }
+.pageMD18-wrapper{
+    @media screen and (max-width: 900px){
+     .people-kids {
+        transform: translate(41px, 77px) !important;   
+    }
+}
+
+}
+.pageMD17-wrapper{
+    @media screen and (max-width: 900px){
+        .people-kids {
+           transform: translate(41px, 58px) !important;   
+       }
+   }
+}
