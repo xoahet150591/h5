@@ -31,6 +31,7 @@ import bgPage13 from "./page_13/bg-13.png";
 import bgPage1300 from "./page_13/page13-bg.png";
 import bgPage16Demo from "./page_16/bg-16.png";
 import bgPage14 from "./page_14/page14-bg1.png";
+import bgPage15 from "./page_15/bg-15.png";
 
 import bgPage16plus from "./page_16/bg-17.png";
 import bgPage17 from "./page_17/bg-18.png";
@@ -157,6 +158,18 @@ import icDua from "./page_26/icDua.png";
 import icNho from "./page_26/icNho.png";
 import icPencil from "./page_27/pencil.png";
 
+import bgPage28 from "./page_28/page28-bg.png";
+import icPen from "./page_28/icPen.png";
+import titlePage28 from "./page_28/tittlePage28.png";
+
+import bgPage29 from "./page_29/page29-bg.png";
+import icMarker from "./page_29/icMarker.png";
+import titlePage29 from "./page_29/tittlePage29.png";
+import bgPage30 from "./page_30/page30-bg.png";
+import icCrayon from "./page_30/icCrayon.png";
+import titlePage30 from "./page_30/tittlePage30.png";
+
+
 import kidsPage2 from "./page_2/kids-page2.png";
 import lisenPage2 from "./page_2/listen.png";
 import singPage2 from "./page_2/sing.png";
@@ -242,10 +255,12 @@ const images = {
 		bgPage14,
 		// page 15
 		// page 16
+		bgPage15,
+		bgPage13,
+		bgPage15,
 		bgPage13,
 		//  page 17
 		// page 18
-		bgPage13,
 		// page 19
 		bgPage16Demo,
 		bgPage16plus,
@@ -254,11 +269,13 @@ const images = {
 		// page 21
 		bgPage20,
 		bgPage21,
-		bgPage20,
 		bgPage21,
-		bgPage25,
 		bgPage26,
 		bgPage27,
+		bgPage28,
+		bgPage29,
+		bgPage30,
+	
 	],
 	people: {
 		kids: {
@@ -336,6 +353,12 @@ const images = {
 		},
 	},
 	icons: {
+		icPen,
+		titlePage28,
+		icMarker,
+		icCrayon,
+		titlePage29,
+		titlePage30,
 		titlePage27,
 		iHaveAMarker,
 		iHaveAPen,

@@ -8,7 +8,7 @@
   &__content {
     position: relative;
     &--topic .topic {
-      @media screen and (max-width: 700px) {
+      @media screen and (min-width: 525px) and (max-width: 768px) {
         width: 225px;
       }
       width: 450px;
@@ -27,8 +27,8 @@
   }
   100% {
     position: relative;
-    top: 400px;
-    left: 370px;
+    top: 110%;
+    left: 65%;
   }
 }
 @keyframes move1m {
@@ -39,8 +39,8 @@
   }
   100% {
     position: relative;
-    top: 300px;
-    left: 300px;
+    top: 120%;
+    left: 65%;
   }
 }
 @keyframes move1mw {
@@ -51,46 +51,46 @@
   }
   100% {
     position: relative;
-    top: 110%;
-    left: 60%;
+    top: 105%;
+    left: 65%;
   }
 }
 .star {
   margin-left: 15%;
-  margin-top: 3%;
+  margin-top: 0%;
 
   display: grid;
 
   grid-template-columns: repeat(2, 1fr);
-  @media screen and (max-width: 1200px) {
+ @media screen and (min-width: 769px) and (max-width: 1200px){
     margin-top: 0%;
   }
-  @media screen and (max-width: 700px) {
+  @media screen and (min-width: 525px) and (max-width: 768px) {
     margin-top: 0%;
     margin-left: 8%;
   }
   .item {
     &.active {
       animation: move 2s forwards;
-      @media screen and (max-width: 1200px) {
+     @media screen and (min-width: 769px) and (max-width: 1200px){
         animation: move1m 2s forwards;
       }
-      @media screen and (max-width: 700px) {
+      @media screen and (min-width: 525px) and (max-width: 768px) {
         animation: move1mw 2s forwards;
       }
     }
     &:nth-child(2n) {
-      @media screen and (max-width: 700px) {
+      @media screen and (min-width: 525px) and (max-width: 768px) {
         margin-left: 125px;
       
       }
   
       margin-left: 150px;
     }
-    @media screen and (max-width: 1200px) {
+   @media screen and (min-width: 769px) and (max-width: 1200px){
       width: 33%;
     }
-    @media screen and (max-width: 700px) {
+    @media screen and (min-width: 525px) and (max-width: 768px) {
       margin-left: 50px;
       margin-bottom: 50px;
     
@@ -109,7 +109,7 @@
   left: 60%;
   top: 20px;
   transform: translateX(-50%);
-  @media screen and (max-width: 700px) {
+  @media screen and (min-width: 525px) and (max-width: 768px) {
     transform: translateX(-43%);
   }
   display: flex;
@@ -118,14 +118,14 @@
     width: 50%;
   }
   .ans {
-    transform: translateX(-90px);
+    transform:translateX(-20%);
 
     width: 80%;
-    margin-top: 80px;
-    @media screen and (max-width: 1200px) {
+    margin-top: 3%;
+   @media screen and (min-width: 769px) and (max-width: 1200px){
       margin-top: 20px;
     }
-    @media screen and (max-width: 700px) {
+    @media screen and (min-width: 525px) and (max-width: 768px) {
       transform: translateX(-40px);
       margin-top: 3px;
     }
@@ -135,7 +135,7 @@
   .page6-wrapper__content {
     .mid-item {
 
-      @media screen and (max-width: 700px) {
+      @media screen and (min-width: 525px) and (max-width: 768px) {
         transform: translateX(-49%);
 
       }
@@ -146,33 +146,37 @@
         top: 47%;
       }
       .ans {
-        @media screen and (max-width: 1200px) {
-          transform: translate(110px, 290px);
+       @media screen and (min-width: 769px) and (max-width: 1200px){
+          transform: translate(29%, 366%);
         }
 
-        @media screen and (max-width: 700px) {
-          transform: translate(45px, 181px);
+        @media screen and (min-width: 525px) and (max-width: 768px) {
+          transform: translate(24%, 409%);
+
 
         }
-        transform: translate(120px, 330px);
+        transform: translate(19%, 350%);
+
       }
     }
     .star {
-      @media screen and (max-width: 1200px) {
+      
+
+     @media screen and (min-width: 769px) and (max-width: 1200px){
         transform: translate(230px, -50px);
 
       }
-      @media screen and (max-width: 700px) {
+      @media screen and (min-width: 525px) and (max-width: 768px) {
         transform: translate(120px, -27px);
       }
 
       .item {
         
         &.active {
-          @media screen and (max-width: 1200px) {
+         @media screen and (min-width: 769px) and (max-width: 1200px){
             animation: move2mw 2s forwards;
           }
-          @media screen and (max-width: 700px) {
+          @media screen and (min-width: 525px) and (max-width: 768px) {
             animation: move2m 2s forwards;
           }
           
@@ -181,7 +185,7 @@
         &:nth-child(2n) {
           
           margin-left: 80px;
-          @media screen and (max-width: 1200px) {
+         @media screen and (min-width: 769px) and (max-width: 1200px){
             margin-left: 30px;
           }
         }
@@ -198,8 +202,8 @@
     }
     100% {
       position: relative;
-      top: 450px;
-      left: -300px;
+      top: 130%;
+      left: -50%;
     }
   }
   @keyframes move2m {
@@ -210,8 +214,8 @@
     }
     100% {
       position: relative;
-      top: 205px;
-      left: -130px;
+      top: 130%;
+      left: -50%;
     }
   }
   @keyframes move2mw {
@@ -230,17 +234,19 @@
 .page8-wrapper {
   .page6-wrapper__content {
     .mid-item {
-      @media screen and (max-width: 1200px) {
+      top: -5%;
+
+     @media screen and (min-width: 769px) and (max-width: 1200px){
         left:62%;
       }
-      @media screen and (max-width: 700px) {
+      @media screen and (min-width: 525px) and (max-width: 768px) {
        top:-10px;
       }
 
       .ans {
         margin-top: 2px;
-        transform: translateX(-69px);
-        @media screen and (max-width: 700px) {
+        transform: translateX(-22%);
+        @media screen and (min-width: 525px) and (max-width: 768px) {
           transform: translateX(-40px);
         }
 
@@ -249,10 +255,10 @@
     .star {
       .item {
         &.active {
-          @media screen and (max-width: 1200px) {
+         @media screen and (min-width: 769px) and (max-width: 1200px){
             animation: move3mw 2s forwards;
           }
-          @media screen and (max-width: 700px) {
+          @media screen and (min-width: 525px) and (max-width: 768px) {
             animation: move3m 2s forwards;
           }
           animation: move3 2s forwards;
@@ -268,8 +274,8 @@
     }
     100% {
       position: relative;
-      top: 100px;
-      left: 400px;
+      top: 22%;
+      left: 65%;
     }
   }
   @keyframes move3m {
@@ -280,8 +286,8 @@
     }
     100% {
       position: relative;
-      top: 20px;
-      left: 200px;
+      top: 16%;
+      left: 68%;
     }
   }
   @keyframes move3mw {
@@ -292,8 +298,8 @@
     }
     100% {
       position: relative;
-      top: 60px;
-      left: 340px;
+      top: 13%;
+      left: 70%;
     }
   }
 }
@@ -302,10 +308,10 @@
     .star {
       .item {
         &.active {
-          @media screen and (max-width: 1200px) {
+         @media screen and (min-width: 769px) and (max-width: 1200px){
             animation: move4mw 2s forwards;
           }
-          @media screen and (max-width: 700px) {
+          @media screen and (min-width: 525px) and (max-width: 768px) {
             animation: move4m 2s forwards;
           }
 
@@ -322,8 +328,8 @@
     }
     100% {
       position: relative;
-      top: 90px;
-      left: -350px;
+      top: 13%;
+      left: -55%;
     }
   }
   @keyframes move4mw {
@@ -334,8 +340,8 @@
     }
     100% {
       position: relative;
-      top: 40px;
-      left: -310px;
+      top: 13%;
+      left: -63%;
     }
   }
   @keyframes move4m {
@@ -346,8 +352,8 @@
     }
     100% {
       position: relative;
-      top: 20px;
-      left: -170px;
+      top: 4%;
+      left: -58%;
     }
   }
 }
