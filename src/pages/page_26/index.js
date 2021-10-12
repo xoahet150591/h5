@@ -26,21 +26,30 @@ const Page26 = (props) => {
 							src={images.icons.icDau}
 							alt={images.icons.icDau}
 							onClick={(e) => {
-								alert("đang xử lý");
+								e.target.classList.add("animation2");
+								setTimeout(() => {
+									onPushAction(e, "change_page", 28);
+								}, 2000);
 							}}
 						/>
 						<img
 							src={images.icons.icNho}
 							alt={images.icons.icNho}
 							onClick={(e) => {
-								alert("đang xử lý");
+								e.target.classList.add("animation3");
+								setTimeout(() => {
+									onPushAction(e, "change_page", 29);
+								}, 2000);
 							}}
 						/>
 						<img
 							src={images.icons.icCam}
 							alt={images.icons.icCam}
 							onClick={(e) => {
-								alert("đang xử lý");
+								e.target.classList.add("animation4");
+								setTimeout(() => {
+									onPushAction(e, "change_page", 30);
+								}, 2000);
 							}}
 						/>
 					</div>

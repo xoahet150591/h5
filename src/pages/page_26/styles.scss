@@ -53,3 +53,45 @@
 		visibility: hidden;
 	}
 }
+
+.animation2 {
+	animation: animation2 1.5s forwards;
+}
+@keyframes animation2 {
+	0% {
+		display: block;
+	}
+	100% {
+		transform: translate(220px, 300px);
+		position: absolute;
+		visibility: hidden;
+	}
+}
+
+.animation3 {
+	animation: animation3 1.5s forwards;
+}
+@keyframes animation3 {
+	0% {
+		display: block;
+	}
+	100% {
+		transform: translate(220px, 300px);
+		position: absolute;
+		visibility: hidden;
+	}
+}
+
+.animation4 {
+	animation: animation4 1.5s forwards;
+}
+@keyframes animation4 {
+	0% {
+		display: block;
+	}
+	100% {
+		transform: translate(220px, 300px);
+		position: absolute;
+		visibility: hidden;
+	}
+}
