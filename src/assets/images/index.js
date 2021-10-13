@@ -236,44 +236,67 @@ import titlePage27 from "./page_27/mini-game.png";
 
 const images = {
 	background: [
+		// bghome
 		background,
+		// page 1
 		bgPage1,
+		// page 2
 		bgPage2,
+		//  page 3
 		bgPage3,
+		// page 4
 		bgPage4,
+		// page 5
 		bgPage5,
+		// page 6
 		bgPage6,
+		// page 7
 		bgPage7,
+		// page 8
 		bgPage8,
+		// page 9
 		bgPage9,
+		// page 10
 		bgPage10,
+		// page 11
 		bgPage11,
 		// page 12
 		bgPage12,
 		// page 13
 		bgPage1300,
+		// page 14
 		bgPage14,
 		// page 15
+		bgPage15,
 		// page 16
-		bgPage15,
 		bgPage13,
+		// page 17
 		bgPage15,
-		bgPage13,
-		//  page 17
 		// page 18
+		bgPage13,
 		// page 19
 		bgPage16Demo,
+		// page 20
 		bgPage16plus,
-		bgPage18,
-		bgPage19,
 		// page 21
-		bgPage20,
+		bgPage17,
+		// page 22
+		bgPage18,
+		// page 23
+		bgPage19,
+		// page 24
 		bgPage21,
+		// page 25
 		bgPage21,
+		// page 26
 		bgPage26,
+		// page 27
 		bgPage27,
+		// page 28
 		bgPage28,
+		// page 29
 		bgPage29,
+		// page 30
 		bgPage30,
 	
 	],
