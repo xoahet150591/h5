@@ -33,13 +33,16 @@ const ListenAndSay = (props) => {
             alt={images.icons.listenPage12}
             src={images.icons.listenPage12}
             className="listen-img"
+            data-aos="fade-right"
           />
         </div>
         <div className="pencil-image-wrapper">
           <img
+            data-aos="fade-right"
+            data-aos-duration="1000"
             src={icon}
             alt={icon}
-            className={`pencil-image ${className ? className :  "" } ` }
+            className={`pencil-image ${className ? className : ""} `}
             onClick={(e) => {
               onPushAction(e, actionType, value);
               setPen(penUrl);
@@ -50,11 +53,19 @@ const ListenAndSay = (props) => {
           <img
             src={pen}
             alt={pen}
-            className={` pencil-text ${pen === "" ? "d-none" : " "}${className ? className :  "" } `}
+            className={` pencil-text ${pen === "" ? "d-none" : " "}${
+              className ? className : ""
+            } `}
           />
         </div>
         <div className="people-page-wrapper">
-          <img src={people} alt={people} className={`people-page ${className ? className :  "" } ` } />
+          <img
+            data-aos="fade-left"
+            data-aos-duration="1000"
+            src={people}
+            alt={people}
+            className={`people-page ${className ? className : ""} `}
+          />
         </div>
       </div>
     </div>

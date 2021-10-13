@@ -8,10 +8,7 @@ const PracticePlay = (props) => {
   const [classImage, setClassImage] = useState("");
 
   const { currentPage, onPushAction, page6 } = props;
-  const {
-    imageKids,
-    className,
-  } = props;
+  const { imageKids, className } = props;
 
   var content = page6.map((item, index) => {
     if (item.active === false)
@@ -49,6 +46,7 @@ const PracticePlay = (props) => {
       <div className={` page6-wrapper ${className ? className : ""} `}>
         <div className="page6-wrapper__content--topic">
           <img
+            data-aos="fade-right"
             className="topic"
             src={images.icons.topic6}
             alt={images.icons.topic6}
@@ -63,12 +61,10 @@ const PracticePlay = (props) => {
                 alt={images.icons.answer6}
                 src={images.icons.answer6}
               />
-              
             </div>
             <div className="star">{content}</div>
           </div>
         </div>
-       
       </div>
     );
   };
