@@ -1,23 +1,26 @@
-import React, { useState } from "react";
+import React, {  useState } from "react";
 import Container from "components/Container";
 import BoxNext from "components/BoxNext/index";
 import images from "assets/images/index";
 import "./styles.scss";
+// import Aos from "aos";
+// import "aos/dist/aos.css";
 
 const PracticePlay = (props) => {
   const [classImage, setClassImage] = useState("");
+//   useEffect(() => {
+//     Aos.init()
+// } ,[])
 
   const { currentPage, onPushAction, page6 } = props;
-  const {
-    imageKids,
-    className,
-  } = props;
+  const { imageKids, className } = props;
 
   var content = page6.map((item, index) => {
     if (item.active === false)
       return (
         <img
           className="item"
+          // data-aos="fade-right"
           alt={item.image}
           src={item.image}
           onClick={(e) => {
@@ -28,6 +31,7 @@ const PracticePlay = (props) => {
     return (
       <img
         className={` item ${classImage ? classImage : ""} `}
+        // data-aos="fade-right"
         alt={item.image}
         src={item.image}
         onClick={(e) => {
@@ -56,19 +60,20 @@ const PracticePlay = (props) => {
         </div>
         <div className="page6-wrapper__content">
           <div className="page6-wrapper__content--answer">
-            <div className="mid-item">
-              <img className="item kids" alt={imageKids} src={imageKids} />
+            <div className="mid-item" >
+              <img className="item kids"
+                // data-aos="fade-down"
+               alt={imageKids} 
+               src={imageKids} />
               <img
                 className="item ans"
                 alt={images.icons.answer6}
                 src={images.icons.answer6}
               />
-              
             </div>
             <div className="star">{content}</div>
           </div>
         </div>
-       
       </div>
     );
   };

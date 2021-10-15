@@ -17,11 +17,13 @@ const ButtonClickMusic = (props) => {
   }, []);
   return (
     <div className="page1-wrapper">
-      <img className="image-wrapper" src={sing}></img>
-      <div className="wrapper-item">
+      <img className="image-wrapper" data-aos="fade-right" src={sing}alt={sing}></img>
+      <div className="wrapper-item" data-aos="fade-up"
+     data-aos-anchor-placement="center-bottom" data-aos-duration="1000">
         <img
           className="pic-1"
           src={icon.button1}
+          alt={icon.button1}
           onClick={(e) => {
             setImages(icon.pagePage);
             setImageIcons(icon.iHavePage);
@@ -31,6 +33,7 @@ const ButtonClickMusic = (props) => {
         <img
           className="pic-2"
           src={icon.button2}
+          alt={icon.button2}
           onClick={(e) => {
             setImages(icon.gluePage);
             setImageIcons(icon.iHaveGlue);    
@@ -40,6 +43,7 @@ const ButtonClickMusic = (props) => {
         <img
           className="pic-3"
           src={icon.button3}
+          alt={icon.button3}
           onClick={(e) => {
             setImages(icon.scrissorPage);
             setImageIcons(icon.iHaveScrissor);
@@ -49,6 +53,7 @@ const ButtonClickMusic = (props) => {
         <img
           className="pic-4"
           src={icon.button4}
+          alt={icon.button4}
           onClick={(e) => {
             setImages(icon.paintPage);
             setImageIcons(icon.iHavePaint);
@@ -56,10 +61,10 @@ const ButtonClickMusic = (props) => {
           }}
         ></img>
       </div>
-      <img className="wrapper-people" src={kids.url}></img>
+      <img className="wrapper-people" data-aos="flip-up" data-aos-duration="1000" src={kids.url} alt={kids.url}></img>
       <div className="wrapper-request">
-        <img src={imagesv}></img>
-        <img src={imageicon}></img>
+        <img src={imagesv}alt={imagesv}></img>
+        <img src={imageicon}alt={imageicon}></img>
       </div>
     </div>
   );
