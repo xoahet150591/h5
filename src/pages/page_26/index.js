@@ -1,46 +1,64 @@
-// import React, { useState } from "react";
-// import "./styles.scss";
-// import images from "assets/images/index";
-// import ButtonMusicRight from "components/ButtonMusicRight/index";
+import React, { useState, useEffect, useCallback } from "react";
+import Container from "components/Container";
+import images from "assets/images";
+import "./styles.scss";
+import { setIntervalControlClass } from "helper/setTimeOutControlClass";
 
-// const Page26 = (props) => {
-// 	const { currentPage, audioPlaying } = props;
+const Page26 = (props) => {
+	const { currentPage, onPushAction } = props;
 
-// 	const [isShowPlayButton, setIsShowPlayButton] = useState(true);
+	const renderContent = () => {
+		return (
+			<div className="page26-wrapper">
+				<div className="page26-wrapper__content">
+					<div className="page26-wrapper__content--wrapper">
+						<img
+							src={images.icons.icDua}
+							alt={images.icons.icDua}
+							onClick={(e) => {
+								e.target.classList.add("animation1");
+								setTimeout(() => {
+									onPushAction(e, "change_page", 27);
+								}, 2000);
+							}}
+						/>
+						<img
+							src={images.icons.icDau}
+							alt={images.icons.icDau}
+							onClick={(e) => {
+								e.target.classList.add("animation2");
+								setTimeout(() => {
+									onPushAction(e, "change_page", 28);
+								}, 2000);
+							}}
+						/>
+						<img
+							src={images.icons.icNho}
+							alt={images.icons.icNho}
+							onClick={(e) => {
+								e.target.classList.add("animation3");
+								setTimeout(() => {
+									onPushAction(e, "change_page", 29);
+								}, 2000);
+							}}
+						/>
+						<img
+							src={images.icons.icCam}
+							alt={images.icons.icCam}
+							onClick={(e) => {
+								e.target.classList.add("animation4");
+								setTimeout(() => {
+									onPushAction(e, "change_page", 30);
+								}, 2000);
+							}}
+						/>
+					</div>
+				</div>
+			</div>
+		);
+	};
 
-// 	const handleClickPause = () => {
-// 		setIsShowPlayButton(false);
-// 	};
-// 	const handleClickPlay = () => {
-// 		setIsShowPlayButton(true);
-// 	};
+	return <Container content={renderContent()} currentPage={currentPage} />;
+};
 
-
-
-// 	const listButton = buttonPage22.map((item) => {
-// 		return <img src={item.urlImage} alt={item.urlImage} />;
-// 	});
-
-// 	return (
-// 		<div className="page25-wrapper">
-// 			<ButtonMusicRight
-// 				audioPlaying={audioPlaying}
-// 				handleClickPause={handleClickPause}
-// 				handleClickPlay={handleClickPlay}
-// 				isShowPlayButton={isShowPlayButton}
-// 			/>
-// 			<div className="countdown-button">
-// 				<img
-// 					src={images.icons.page22_countdown}
-// 					alt={images.icons.page22_countdown}
-// 				/>
-// 			</div>
-// 			<div className="start-button">
-// 				<img src={images.icons.page22_start} alt={images.icons.page22_start} />
-// 			</div>
-// 			<div className="answer-button">{listButton}</div>
-// 		</div>
-// 	);
-// };
-
-// export default React.memo(Page25);
+export default React.memo(Page26);

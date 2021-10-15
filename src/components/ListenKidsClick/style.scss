@@ -5,207 +5,131 @@
         position: relative;
         width: 100%;
         height: 100%;
+        .page-content-des{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+        }
         .page-wrapper__content--box-empty1{
-                width: 60%;
+                width: 40%;
                 margin: 30px;
+                @media screen and (max-width: 900px) {
+                    margin: 5px;
+                }
             }
             .title-sing{
                 transition: .1s ease-in;
                 &.show{
-                    animation: show 1s forwards;
+                    animation: show 2s forwards;
                 }
                 display: flex;
-                justify-content: center;
-                @media screen and (max-width: 991px) {
-                    position: absolute;
-                    top: 30%;
-                    left: 20%;
-                    transform: translate(-50%,-50%);
-                    display: block;
-                }
-                img{
-                    width: 30%;
-                    @media screen and (max-width: 991px) {
-                        width: 80%;
-                    }
-                }
+                justify-content: center;       
             }
-            .people-kids{
-                position: absolute;
-                bottom: 30px;
-                left: 50%;
-                transform: translateX(-50%);
+            .people-kids{  
                 cursor: pointer;
-                @media screen and (max-width: 991px) {
-                    left: 0%;
-                    transform: translateX(0);
-                }
-                img{
-                    width: 130%;
-                    @media screen and (max-width: 991px) {
-                        width: 100%;
-                    }
-                }
             }
     }
     &.page3-wrapper{
-        .title-sing{
-            @media screen and (max-width: 700px) {
-                position: absolute;
-                top: 30%;
-                left: 20%;
-            }   
+        .title-sing{ 
+            margin-bottom: 100px;
+            max-height: 25%;
+            @media screen and (max-width: 1199px) {
+                margin-bottom: 10px;
+            }
             img{
-                width: 20%;
-                @media screen and (max-width: 1100px) {
-                    width: 30%;
-                }
-                @media screen and (max-width: 700px) {
-                    width: 30%;
-                }
+                max-width: 100%;
             }
         }
         .people-kids{
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            @media screen and (max-width: 700px) {
-                left: 10%;
-                transform: translate(0%,25px);
-                
+            position: relative;
+            width: 80%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            height: 50%;
+            transform: translateY(0px);
+            @media screen and (max-width: 1100px) {
+                transform: translateY(0px);
             }
             img{
                 width: 100%;
-                @media screen and (max-width: 1100px) {
-                    width: 130%;
-                }
-                @media screen and (max-width: 700px) {
-                    width: 85%;
-                }
             }
         }
     }
     &.page4-wrapper{
+        .page-content-des{
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
         .title-sing{
-            position: absolute;
-            left: 40px;
-            bottom: 300px;
-            @media screen and (max-width: 1199px) {
-                bottom: 50%;
-            }
-            @media screen and (max-width: 1100px) {
-                left: 30px;
-            bottom: 200px;
-            }
+            flex-basis: 30%;
             img{
-                width: 80%;
-                @media screen and (max-width: 1100px) {
-                    width: 50%;
-                }
-                @media screen and (max-width: 700px) {
-                    width: 35%;
-                    transform: translateY(30px);
-                }
+                max-width: 100%;
             }
         }
         .people-kids{
-            position: absolute;
-            bottom: 100px;
-            left: 65%;
-            transform: translateX(-50%);
-            // @media screen and (max-width: 1100px) {
-            //     width: 90%;
-            // }
-            @media screen and (max-width: 700px) {
-                bottom: 30px;
+            flex-basis: 50%;
+            display: flex;
+            justify-content: center;
+            @media screen and (max-width: 1000px) {
+                flex-basis: 40%;
             }
             img{
-                width: 130%;
-                @media screen and (max-width: 1100px) {
-                    width: 90%;
-                }
-                @media screen and (max-width: 700px) {
-                    width: 90%;
-                }
+                max-width: 100%;
             }
         }
     }
     &.page5-wrapper{
-        .title-sing{
-            @media screen and (max-width: 700px) {
-                top: 27%;
-                left: 39%;
-            }   
+        .title-sing{ 
+            margin-bottom: 100px;
+            max-height: 30%;
+            @media screen and (max-width: 1000px) {
+                margin-bottom: 15px;
+            }
             img{
-                width: 20%;
-                @media screen and (max-width: 991px) {
-                    width: 80%;
-                }
-                @media screen and (max-width: 991px) {
-                    width: 80%;
-                }
-                @media screen and (max-width: 700px) {
-                    width: 40%;
-                }
+                max-width: 100%;
             }
         }
         .people-kids{
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            @media screen and (max-width: 1100px) {
-                left: 55%;
-            }
-            @media screen and (max-width: 700px) {
-                left: 60%;
-            }
+            position: relative;
+            width: 80%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+            flex: 0 0 1;
             img{
-                width: 100%;
-                @media screen and (max-width: 1100px) {
-                    width: 70%;
-                }
-                @media screen and (max-width: 700px) {
-                    width: 60%;
-                }
+                max-width: 100%;
             }
         }
     }
     &.page6-wrapper{
-        .title-sing{
-            @media screen and (max-width: 700px) {
-                top: 27%;
-                left: 39%;
-            }   
+        .title-sing{ 
+            margin-bottom: 100px;
+            max-height: 30%;
+            @media screen and (max-width: 1000px) {
+                margin-bottom: 15px;
+            }
             img{
-                width: 20%;
-                @media screen and (max-width: 991px) {
-                    width: 80%;
-                }
-                @media screen and (max-width: 700px) {
-                    width: 40%;
-                }
+                max-width: 100%;
             }
         }
         .people-kids{
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-
-            @media screen and (max-width: 1100px) {
-                left: 52%;
-            }
-            @media screen and (max-width: 700px) {
-                left: 60%;
-            }
+            position: relative;
+            width: 80%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+            flex:  0 0 1;
             img{
-                width: 120%;
-                @media screen and (max-width: 1100px) {
-                    width: 90%;
-                }
-                @media screen and (max-width: 700px) {
-                    width: 60%;
-                }
-                
+                max-width: 100%;
             }
         }
     }
@@ -214,11 +138,18 @@
 @keyframes show {
     0% {
 		transform: scale(1);
+        opacity: 0.2;
 	}
 	50% {
-		transform: scale(1.1);
+		transform: scale(1.02);
+        opacity: 0.7;
+        
 	}
+    80% {
+        transform: scale(0.8);
+    }
 	100% {
+        opacity: 0.9;
 		transform: scale(1);
 	}
 }

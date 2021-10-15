@@ -26,6 +26,11 @@ import Page23 from "./page_23/index";
 import Page13 from "./page_13/index";
 import Page24 from "./page_24/index";
 import Page25 from "./page_25/index";
+import Page26 from "./page_26/index";
+import Page27 from "./page_27/index";
+import Page28 from "./page_28/index";
+import Page29 from "./page_29/index";
+import Page30 from "./page_30/index";
 
 const Pages = (props) => {
 	const { onPushAction, currentPage, audioPlaying } = props;
@@ -88,22 +93,30 @@ const Pages = (props) => {
 			break;
 		case 10:
 			Page = <Page10 currentPage={currentPage} onPushAction={onPushAction} />;
-			// valueCustomForPrevChangePage = 5;
+			valueCustomForNextChangePage = 15;
 			break;
 		case 11:
 			Page = <Page11 currentPage={currentPage} onPushAction={onPushAction} />;
+			isDisableNextIcon = true;
 			break;
 		case 12:
+			isDisableNextIcon = true;
+			valueCustomForPrevChangePage = 10;
 			Page = <Page12 currentPage={currentPage} onPushAction={onPushAction} />;
 			break;
 		case 13:
+			isDisableNextIcon = true;
+			valueCustomForPrevChangePage = 10;
 			Page = <Page13 currentPage={currentPage} onPushAction={onPushAction} />;
 			break;
 		case 14:
+			isDisableNextIcon = true;
+			valueCustomForPrevChangePage = 10;
 			Page = <Page14 currentPage={currentPage} onPushAction={onPushAction} />;
 			break;
 		case 15:
 			Page = <Page15 currentPage={currentPage} onPushAction={onPushAction} />;
+			valueCustomForPrevChangePage = 10;
 			break;
 		case 16:
 			Page = <Page16 currentPage={currentPage} onPushAction={onPushAction} />;
@@ -147,6 +160,60 @@ const Pages = (props) => {
 				/>
 			);
 			break;
+		case 26:
+			isDisableNextIcon = true;
+			Page = (
+				<Page26
+					currentPage={currentPage}
+					onPushAction={onPushAction}
+					audioPlaying={audioPlaying}
+				/>
+			);
+			break;
+		case 27:
+			isDisableNextIcon = true;
+			Page = (
+				<Page27
+					currentPage={currentPage}
+					onPushAction={onPushAction}
+					audioPlaying={audioPlaying}
+				/>
+			);
+			break;
+		case 28:
+			isDisableNextIcon = true;
+			valueCustomForPrevChangePage = 26;
+			Page = (
+				<Page28
+					currentPage={currentPage}
+					onPushAction={onPushAction}
+					audioPlaying={audioPlaying}
+				/>
+			);
+			break;
+		case 29:
+			isDisableNextIcon = true;
+			valueCustomForPrevChangePage = 26;
+			Page = (
+				<Page29
+					currentPage={currentPage}
+					onPushAction={onPushAction}
+					audioPlaying={audioPlaying}
+				/>
+			);
+			break;
+		case 30:
+			isDisableNextIcon = true;
+			valueCustomForPrevChangePage = 26;
+			Page = (
+				<Page30
+					currentPage={currentPage}
+					onPushAction={onPushAction}
+					audioPlaying={audioPlaying}
+				/>
+			);
+			break;
+
 		default:
 			break;
 	}
