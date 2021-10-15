@@ -69,27 +69,18 @@ const Pages = (props) => {
 					audioPlaying={audioPlaying}
 				/>
 			);
-			// isDisableNextIcon = isShowNextIcon ? false : true;
-			// valueCustomForNextChangePage = 10;
 			break;
 		case 6:
 			Page = <Page6 currentPage={currentPage} onPushAction={onPushAction} />;
-			// isDisableNextIcon = true;
 			break;
 		case 7:
 			Page = <Page7 currentPage={currentPage} onPushAction={onPushAction} />;
-			// valueCustomForPrevChangePage = 5;
-			// isDisableNextIcon = true;
 			break;
 		case 8:
 			Page = <Page8 currentPage={currentPage} onPushAction={onPushAction} />;
-			// valueCustomForPrevChangePage = 5;
-			// isDisableNextIcon = true;
 			break;
 		case 9:
 			Page = <Page9 currentPage={currentPage} onPushAction={onPushAction} />;
-			// valueCustomForPrevChangePage = 5;
-			// isDisableNextIcon = true;
 			break;
 		case 10:
 			Page = <Page10 currentPage={currentPage} onPushAction={onPushAction} />;

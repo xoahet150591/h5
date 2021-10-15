@@ -49,9 +49,6 @@ const Home = () => {
 				tmpArrDulpPlayed.add(v.id);
 			}
 			tmpArrDulpPlayed = [...tmpArrDulpPlayed];
-			if (tmpArrDulpPlayed.length >= 4) {
-				dispatch(setIsShowNextIcon(true));
-			}
 		}
 	}, [isAudioEndOrPause, currentPage]);
 
@@ -139,13 +136,6 @@ const Home = () => {
 		};
 		initBJY();
 
-		const audiosPrevPlaying = window.bridge?._prevRecordStack;
-		if (audiosPrevPlaying.length > 0) {
-			for (const v of audiosPrevPlaying) {
-				v.pause();
-			}
-		}
-
 		// play audio background
 		switch (currentPage) {
 			case 0:
@@ -200,6 +190,7 @@ const Home = () => {
 				PromiseChangePage.then((res) => {
 					if (res <= PAGE_DATA[targetPage].length) {
 						const audioPlaying =
+							window.currentAudio ||
 							window.bridge._prevRecordStack[
 								window.bridge._prevRecordStack.length - 1
 							];
@@ -210,6 +201,7 @@ const Home = () => {
 				break;
 			case "play_audio":
 				const audioPlaying =
+					window.currentAudio ||
 					window.bridge._prevRecordStack[
 						window.bridge._prevRecordStack.length - 1
 					];
@@ -253,6 +245,7 @@ const Home = () => {
 				/>
 				<ButtonBackgroundMusic
 					audioPlaying={
+						window.currentAudio ||
 						window.bridge?._prevRecordStack?.[
 							window.bridge._prevRecordStack.length - 1
 						]
@@ -274,6 +267,7 @@ const Home = () => {
 							onPushAction={handleClick}
 							currentPage={currentPage}
 							audioPlaying={
+								window.currentAudio ||
 								window.bridge?._prevRecordStack?.[
 									window.bridge._prevRecordStack.length - 1
 								]

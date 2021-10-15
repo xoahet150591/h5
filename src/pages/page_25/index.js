@@ -3,9 +3,12 @@ import Container from "components/Container";
 import images from "assets/images";
 import "./styles.scss";
 import { setIntervalControlClass } from "helper/setTimeOutControlClass";
+import ButtonBackgroundMusic from "components/ButtonBackgroundMusic/index";
+import ButtonMusicRight from "components/ButtonMusicRight/index";
 
 const Page25 = (props) => {
-	const { currentPage, onPushAction } = props;
+	const { currentPage, onPushAction, audioPlaying } = props;
+	const [isShowPlayButton, setIsShowPlayButton] = useState(true);
 
 	// useEffect(() => {
 	// 	setIntervalControlClass("icon-sing", "zoom", 2000);
@@ -66,6 +69,13 @@ const Page25 = (props) => {
 		);
 	});
 
+	const handleClickPause = () => {
+		setIsShowPlayButton(false);
+	};
+	const handleClickPlay = () => {
+		setIsShowPlayButton(true);
+	};
+
 	const renderContent = () => {
 		return (
 			<div className="page25-wrapper">
@@ -75,6 +85,13 @@ const Page25 = (props) => {
 						<div className="text-wrapper">{listText}</div>
 					</div>
 				</div>
+				<ButtonMusicRight
+					audioPlaying={audioPlaying}
+					handleClickPause={handleClickPause}
+					handleClickPlay={handleClickPlay}
+					isShowPlayButton={isShowPlayButton}
+					className="button"
+				/>
 			</div>
 		);
 	};
