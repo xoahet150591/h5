@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `yarn start`
+### `yarn dev`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -27,44 +27,100 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+### `页面开发须知`
+开发前必读
+百家云H5课件 开发文档
+https://dev.baijiayun.com/wiki/detail/87
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### `课件打包须知`
+百家云H5课件zip要求压缩包内跟目录为一个英文名的文件夹，此文件夹中需要有index.html文件作为课件入口。
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+执行 yarn build 之后，只需要将build目录（可以改名）打成zip压缩包即可上传
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### `百家云同步机制`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1，交互事件触发，将事件发送到百家云，此时只发送事件内容，不能做任何的事件执行（如页面跳转、动画、显示等）
 
-## Learn More
+2，待百家云sdk回调后，进行回调事件判断，如果是当前页面的事件，再进行页面事件执行（如动画、显示等），其中页面跳转会自动完成。
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+事件包含：页面（page）跳转 ｜ 步骤（step）跳转 ｜ 操作事件（eventRecord）
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+page，step，record，prevRecord 等数据均会自动存在redux中
 
-### Code Splitting
+####  `事件发送方式`
+其中onPushAction方法可由上层组件传入
+```
+    const { onPushAction } = props;
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    onPushAction(e,{
+        actionType: [changePage,fireEvent]
+        eventName: EventName:string,
+        eventData: {
+            ...
+        }
+    })
 
-### Analyzing the Bundle Size
+    //页面跳转
+    onPushAction(e,{
+        actionType: 'changePage'
+        eventName: 'eg: from XXXX page',
+        eventData: {
+            page:10,
+            step:0
+        }
+    })
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    //操作事件
+    onPushAction(e,{
+        actionType: 'fireEvent'
+        eventName: 'eg: from XXXX page',
+        eventData: {
+            playAudio:"iHaveAPaper"
+            ...someData
+        }
+    })
 
-### Making a Progressive Web App
+    操作事件在提交之前，在外层会自动加入当前页面和步骤两个数据
+    {
+        eventPage: currentPage,
+        eventPageStep: currentStep,
+    }
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+####  `事件响应方式`
+页面获取redux中的 currentRecord，对最后一条进行判断，如果符合本页的事件，执行事件
+```
+    import { useSelector } from "react-redux";
 
-### Advanced Configuration
+    const {
+		currentPage,
+		currentStep,
+        currentRecord,
+        prevRecord,
+    } = useSelector((state) => state.app);
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+    useEffect(()=>{
+		if(currentRecord.length > 0){
+			let recordEventData = currentRecord[currentRecord.length-1];
+			if(recordEventData.eventPage === currentPage && 
+				recordEventData.eventPageStep === currentStep &&
+				recordEventData.eventName === imgClickEventName){
+				console.log(`runRecordEvent`,recordEventData)
+				setImages(recordEventData.eventData.images);
+				setImageIcons(recordEventData.eventData.imageIcons);
 
-### Deployment
+				//do something
+			}
+		}
+	},[currentRecord])
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### `本地主要的redux数据`
 
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+    currentPage:0,//当前页面
+    currentStep:0,//当前页面的步骤
+    currentRecord:[],//当前页面的操作事件列表记录
+    prevRecord:[],//上一次操作的事件列表记录
+```
