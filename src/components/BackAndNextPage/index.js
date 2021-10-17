@@ -25,8 +25,11 @@ const BackAndNextPage = (props) => {
 			{!isDisablePrevIcon ? (
 				<CursorContainer
 					onClick={onClickChangePage}
-					actionType="change_page"
-					value={valueCustomForPrevPage || currentPage - 1}
+					actionType="changePage"
+					value={{
+						page:valueCustomForPrevPage || currentPage - 1,
+						step:0
+					}}
 				>
 					<img
 						className="ic-prev-page"
@@ -40,14 +43,17 @@ const BackAndNextPage = (props) => {
 				<CursorContainer
 					currentPage={currentPage}
 					onClick={onClickChangePage}
-					actionType="change_page"
-					value={valueCustomForNextPage || currentPage + 1}
+					actionType="changePage"
+					value={{
+						page:valueCustomForNextPage || currentPage + 1,
+						step:0
+					}}
 				>
 					<img
 						className="ic-next-page"
 						src={images.icons.icRowRight}
 						alt={images.icons.icRowRight}
-						data-type="change_page"
+						data-type="changePage"
 					/>
 				</CursorContainer>
 			) : null}

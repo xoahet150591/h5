@@ -1,6 +1,7 @@
 import BackAndNextPage from "components/BackAndNextPage/index";
 import React from "react";
 import { useSelector } from "react-redux";
+import Page0 from "./home/index2";
 import Page1 from "./page_1/components/index";
 import Page10 from "./page_10/index";
 import Page11 from "./page_11/index";
@@ -43,6 +44,9 @@ const Pages = (props) => {
 	let valueCustomForNextChangePage = null;
 
 	switch (currentPage) {
+		case 0:
+			Page = <Page0 currentPage={currentPage} onPushAction={onPushAction} />;
+			break;
 		case 1:
 			Page = <Page1 currentPage={currentPage} onPushAction={onPushAction} />;
 			break;

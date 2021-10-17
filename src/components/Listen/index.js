@@ -6,9 +6,12 @@ import {
 	setIntervalControlClass,
 } from "helper/setTimeOutControlClass";
 
+import { useSelector } from "react-redux";
+import audioPlayer from 'helper/audioPlayer'
+import audios from "assets/audios/index";
+
 const ListenAndSay = (props) => {
 	const {
-		currentPage,
 		onPushAction,
 		listen,
 		icon,
@@ -19,6 +22,35 @@ const ListenAndSay = (props) => {
 		className,
 	} = props;
 	const [pen, setPen] = useState("");
+
+	const {playAudio,pauseAudio} = audioPlayer
+
+	const {
+		currentPage,
+		currentStep,
+        currentRecord,
+        prevRecord,
+    } = useSelector((state) => state.app);
+
+	const imgClickEventName = 'Listen'
+
+	const imgClickHandler = (e,op)=>{
+		onPushAction(e,op.actionType,op)
+	}
+
+	useEffect(()=>{
+		if(currentRecord.length > 0){
+			let recordEventData = currentRecord[currentRecord.length-1];
+			if(recordEventData.eventPage === currentPage && 
+				recordEventData.eventPageStep === currentStep &&
+				recordEventData.eventName === imgClickEventName){
+				console.log(`runRecordEvent`,recordEventData)
+				//playAudio
+				let audioUrl = audios.find((item) => item.id === recordEventData.eventData.playAudio)?.audio
+				playAudio(audioUrl)
+			}
+		}
+	},[currentRecord])
 
 	useEffect(() => {
 		setIntervalControlClass("text-image", "zoom", 3000);
@@ -43,7 +75,14 @@ const ListenAndSay = (props) => {
 						alt={icon}
 						className={`text-image ${className ? className : ""} `}
 						onClick={(e) => {
-							onPushAction(e, actionType, value);
+							imgClickHandler(e,{
+								actionType: 'fireEvent',
+								eventName: imgClickEventName,
+								eventData: {
+									playAudio:value
+								}
+							})
+							//onPushAction(e, actionType, value);
 						}}
 					/>
 				</div>

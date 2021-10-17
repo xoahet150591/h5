@@ -6,8 +6,9 @@ import { setIntervalControlClass } from "helper/setTimeOutControlClass";
 import { useDispatch, useSelector } from "react-redux";
 import { configPage10 } from "redux/slice";
 
+
 const Page10 = (props) => {
-	const { currentPage, onPushAction } = props;
+	const {  onPushAction } = props;
 
 	const dispatch = useDispatch();
 
@@ -24,6 +25,20 @@ const Page10 = (props) => {
 		},
 		[dispatch]
 	);
+
+
+	const {
+		currentPage,
+		currentStep,
+        currentRecord,
+        prevRecord,
+    } = useSelector((state) => state.app);
+
+	const imgClickEventName = 'Page10'
+
+	const imgClickHandler = (e,op)=>{
+		onPushAction(e,op.actionType,op)
+	}
 
 	useEffect(() => {
 		const tho = document.querySelector(".tho");
@@ -82,7 +97,15 @@ const Page10 = (props) => {
 							onClick={(e) => {
 								handleChangeLocationTho(e, "0%", "-6%");
 								setTimeout(() => {
-									onPushAction(e, "change_page", 11);
+									imgClickHandler(e,{
+										actionType: 'changePage',
+										eventName: imgClickEventName,
+										eventData: {
+											page:11,
+											step:0
+										}
+									})
+									//onPushAction(e, "change_page", 11);
 								}, 2500);
 							}}
 						/>
@@ -93,7 +116,15 @@ const Page10 = (props) => {
 							data-id="star2"
 							onClick={(e) => {
 								setTimeout(() => {
-									onPushAction(e, "change_page", 12);
+									//onPushAction(e, "change_page", 12);
+									imgClickHandler(e,{
+										actionType: 'changePage',
+										eventName: imgClickEventName,
+										eventData: {
+											page:12,
+											step:0
+										}
+									})
 								}, 2500);
 								handleChangeLocationTho(e, "40%", "28%");
 							}}
@@ -105,7 +136,15 @@ const Page10 = (props) => {
 							data-id="star3"
 							onClick={(e) => {
 								setTimeout(() => {
-									onPushAction(e, "change_page", 13);
+									//onPushAction(e, "change_page", 13);
+									imgClickHandler(e,{
+										actionType: 'changePage',
+										eventName: imgClickEventName,
+										eventData: {
+											page:13,
+											step:0
+										}
+									})
 								}, 2500);
 								handleChangeLocationTho(e, "0%", "62%");
 							}}
@@ -117,7 +156,15 @@ const Page10 = (props) => {
 							data-id="star4"
 							onClick={(e) => {
 								setTimeout(() => {
-									onPushAction(e, "change_page", 14);
+									//onPushAction(e, "change_page", 14);
+									imgClickHandler(e,{
+										actionType: 'changePage',
+										eventName: imgClickEventName,
+										eventData: {
+											page:14,
+											step:0
+										}
+									})
 								}, 2500);
 								handleChangeLocationTho(e, "52%", "95%");
 							}}

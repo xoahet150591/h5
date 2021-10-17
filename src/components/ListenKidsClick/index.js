@@ -6,12 +6,34 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { setIntervalControlClass } from "helper/setTimeOutControlClass";
 
+import { useSelector } from "react-redux";
+
+import audioPlayer from 'helper/audioPlayer'
+import audios from "assets/audios/index";
+
 const ListenKidsClick = (props) => {
-	const { currentPage, onPushAction } = props;
+	const { onPushAction } = props;
 	const { imageSing, imageKids, fileAudio, className } = props;
 
 	const [image, setImage] = useState("");
 	const [classAni, setClassAni] = useState("");
+
+	const {playAudio,pauseAudio} = audioPlayer
+
+	const {
+		currentPage,
+		currentStep,
+        currentRecord,
+        prevRecord,
+    } = useSelector((state) => state.app);
+
+	const imgClickEventName = 'ListenKidsClick'
+
+	const imgClickHandler = (e,op)=>{
+		onPushAction(e,op.actionType,op)
+	}
+
+
 	useEffect(() => {
 		Aos.init();
 	}, []);
@@ -23,7 +45,26 @@ const ListenKidsClick = (props) => {
 
 	useEffect(() => {
 		setIntervalControlClass("kid-zoom", "zoom", 3000);
-	}, [currentPage]);
+	}, []);
+
+
+	useEffect(()=>{
+		if(currentRecord.length > 0){
+			let recordEventData = currentRecord[currentRecord.length-1];
+			if(recordEventData.eventPage === currentPage && 
+				recordEventData.eventPageStep === currentStep &&
+				recordEventData.eventName === imgClickEventName){
+				console.log(`runRecordEvent`,recordEventData)
+				setImage(recordEventData.eventData.images);
+				setClassAni(recordEventData.eventData.classAni);
+
+				//playAudio
+				let audioUrl = audios.find((item) => item.id === recordEventData.eventData.playAudio)?.audio
+				playAudio(audioUrl)
+			}
+		}
+	},[currentRecord])
+
 
 	const renderContent = () => {
 		return (
@@ -45,9 +86,21 @@ const ListenKidsClick = (props) => {
 								src={imageKids}
 								alt={imageKids}
 								onClick={(e) => {
-									onPushAction(e, "play_audio", fileAudio);
-									setImage(imageSing);
-									setClassAni("show");
+
+									imgClickHandler(e,{
+										actionType: 'fireEvent',
+										eventName: imgClickEventName,
+										eventData: {
+											images: imageSing,
+											classAni:"show",
+											playAudio:fileAudio
+										}
+									})
+
+
+									// onPushAction(e, "play_audio", fileAudio);
+									// setImage(imageSing);
+									// setClassAni("show");
 								}}
 								className="kid-zoom"
 							/>

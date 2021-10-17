@@ -1,11 +1,58 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Container from "components/Container";
 import "./styles.scss";
 
+
+import { useSelector } from "react-redux";
+import audioPlayer from 'helper/audioPlayer'
+import audios from "assets/audios/index";
+
 const WhatDoYouHave = (props) => {
-  const { currentPage, onPushAction, page27 } = props;
+  const { onPushAction, page27 } = props;
   const [classImage, setClassImage] = useState("");
   const { title, icQues } = props;
+
+
+  const {playAudio,pauseAudio} = audioPlayer
+
+	const {
+		currentPage,
+		currentStep,
+        currentRecord,
+        prevRecord,
+    } = useSelector((state) => state.app);
+
+	const imgClickEventName = page27
+
+	const imgClickHandler = (e,op)=>{
+		onPushAction(e,op.actionType,op)
+	}
+
+	useEffect(()=>{
+		if(currentRecord.length > 0){
+			let recordEventData = currentRecord[currentRecord.length-1];
+			if(recordEventData.eventPage === currentPage && 
+				recordEventData.eventPageStep === currentStep &&
+				recordEventData.eventName === imgClickEventName){
+				console.log(`runRecordEvent`,recordEventData)
+
+        //playAudio & do somethings
+        if(recordEventData.eventData.active){
+          setClassImage("active");
+          let audioUrl = audios.find((item) => item.id === recordEventData.eventData.playAudios[0])?.audio
+          playAudio(audioUrl)
+          setTimeout(() => {
+            let audioUrl1 = audios.find((item) => item.id === recordEventData.eventData.playAudios[1])?.audio
+            playAudio(audioUrl1)
+          }, 1000);
+        }else {
+          let audioUrl = audios.find((item) => item.id === recordEventData.eventData.playAudio)?.audio
+          playAudio(audioUrl)
+        }
+				
+			}
+		}
+	},[currentRecord])
 
   var content = page27.map((item, index) => {
     if (item.active === false)
@@ -15,7 +62,15 @@ const WhatDoYouHave = (props) => {
           alt={item.image}
           src={item.image}
           onClick={(e) => {
-            onPushAction(e, "play_audio", "audioFalse");
+            imgClickHandler(e,{
+              actionType: 'fireEvent',
+              eventName: imgClickEventName,
+              eventData: {
+                active: false,
+                playAudio:"audioFalse"
+              }
+            })
+            //onPushAction(e, "play_audio", "audioFalse");
           }}
         />
       );
@@ -25,11 +80,20 @@ const WhatDoYouHave = (props) => {
         alt={item.image}
         src={item.image}
         onClick={(e) => {
-          onPushAction(e, "play_audio", "audioTrue");
-          setClassImage("active");
-          setTimeout(() => {
-            onPushAction(e, "play_audio", item.clap);
-          }, 1000);
+          imgClickHandler(e,{
+            actionType: 'fireEvent',
+            eventName: imgClickEventName,
+            eventData: {
+              active: true,
+              playAudios:["audioTrue",item.clap]
+            }
+          })
+
+          // onPushAction(e, "play_audio", "audioTrue");
+          // setClassImage("active");
+          // setTimeout(() => {
+          //   onPushAction(e, "play_audio", item.clap);
+          // }, 1000);
         }}
       />
     );

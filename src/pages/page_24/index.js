@@ -3,7 +3,7 @@ import Container from "components/Container";
 import images from "assets/images";
 import "./styles.scss";
 import Practice from "components/Practice/index";
-import ButtonMusicRight from "components/ButtonMusicRight/index";
+//import ButtonMusicRight from "components/ButtonMusicRight/index";
 const Page24 = (props) => {
 	const { currentPage, audioPlaying } = props;
 	const [isShowPlayButton, setIsShowPlayButton] = useState(true);
@@ -17,13 +17,13 @@ const Page24 = (props) => {
 	const renderContent = () => {
 		return (
 			<div className="wrap-all">
-				<ButtonMusicRight
+				{/* <ButtonMusicRight
 					audioPlaying={audioPlaying}
 					handleClickPause={handleClickPause}
 					handleClickPlay={handleClickPlay}
 					isShowPlayButton={isShowPlayButton}
 					className="button"
-				/>
+				/> */}
 				<Practice
 					imagePractice={images.icons.practicePage21}
 					kid1={images.icons.kid1Page21}

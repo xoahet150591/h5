@@ -14,6 +14,7 @@ import {
 	setIsPlayRecord,
 	setIsShowNextIcon,
 	setUrlBackground,
+	setCurrentData
 } from "redux/slice";
 import { useSelector, useDispatch } from "react-redux";
 import Pages from "pages";
@@ -58,8 +59,13 @@ const Home = () => {
 
 		// set object global
 		const initBJY = () => {
+			if(window.bridge) return;
 			window.bridge = window.BJYBridge.getInstance({
 				onPageChange: (page, step) => {
+
+					//翻页回调事件，需要先卸载当前页面，然后再去加载指定页面
+					//卸载当前页面需要停止所有声音和未执行完的事件
+
 					return new Promise((resolve) => {
 						let pageData = PAGE_DATA[page];
 						console.log("audio", window.currentAudio);
@@ -67,9 +73,15 @@ const Home = () => {
 							window.currentAudio.pause();
 						}
 						if (pageData) {
-							dispatch(setCurrentPage(page));
-							dispatch(setUrlBackground(images.background[page]));
-							dispatch(setCurrentStep(0));
+							dispatch(setCurrentData({
+								currentPage:page,
+								currentStep:step,
+								urlBackground:images.background[page],
+
+							}))
+							// dispatch(setCurrentPage(page));
+							// dispatch(setUrlBackground(images.background[page]));
+							// dispatch(setCurrentStep(0));
 							resolve(pageData.length);
 						} else {
 							console.error = "Error: Illegal Page";
@@ -77,6 +89,10 @@ const Home = () => {
 					});
 				},
 				onRecordChange: (record, prevRecord) => {
+
+					//页面事件同步，需要判定事件的页面归宿，是否与当前的页面一致，不一致不处理。
+					//事件类型包含 play_audio play_event 
+
 					console.log(record, "=====> record <=====");
 					console.log(record[record.length - 1]);
 					if (

@@ -6,11 +6,48 @@ import {
 	setIntervalControlClass,
 } from "helper/setTimeOutControlClass";
 
+import { useSelector } from "react-redux";
+
+import audioPlayer from 'helper/audioPlayer'
+import audios from "assets/audios/index";
+
 const ButtonClickMusic = (props) => {
-	const { currentPage, onPushAction, sing, kids, icon } = props;
+	const { onPushAction, sing, kids, icon } = props;
 
 	const [imagesv, setImages] = useState("");
 	const [imageicon, setImageIcons] = useState("");
+
+	const {playAudio,pauseAudio} = audioPlayer
+
+	const {
+		currentPage,
+		currentStep,
+        currentRecord,
+        prevRecord,
+    } = useSelector((state) => state.app);
+
+	const imgClickEventName = 'balaba'
+
+	const imgClickHandler = (e,op)=>{
+		onPushAction(e,op.actionType,op)
+	}
+
+	useEffect(()=>{
+		if(currentRecord.length > 0){
+			let recordEventData = currentRecord[currentRecord.length-1];
+			if(recordEventData.eventPage === currentPage && 
+				recordEventData.eventPageStep === currentStep &&
+				recordEventData.eventName === imgClickEventName){
+				console.log(`runRecordEvent`,recordEventData)
+				setImages(recordEventData.eventData.images);
+				setImageIcons(recordEventData.eventData.imageIcons);
+
+				//playAudio
+				let audioUrl = audios.find((item) => item.id === recordEventData.eventData.playAudio)?.audio
+				playAudio(audioUrl)
+			}
+		}
+	},[currentRecord])
 
 	useEffect(() => {
 		// setIntervalControlClass("wrapper-request", "zoom", 0);
@@ -35,9 +72,18 @@ const ButtonClickMusic = (props) => {
 					src={icon.button1}
 					alt={icon.button1}
 					onClick={(e) => {
-						setImages(icon.pagePage);
-						setImageIcons(icon.iHavePage);
-						onPushAction(e, "play_audio", "iHaveAPaper");
+						imgClickHandler(e,{
+							actionType: 'fireEvent',
+							eventName: imgClickEventName,
+							eventData: {
+								images: icon.pagePage,
+								imageIcons:icon.iHavePage,
+								playAudio:"iHaveAPaper"
+							}
+						})
+						// setImages(icon.pagePage);
+						// setImageIcons(icon.iHavePage);
+						// onPushAction(e, "play_audio", "iHaveAPaper");
 					}}
 				></img>
 				<img
@@ -45,9 +91,18 @@ const ButtonClickMusic = (props) => {
 					src={icon.button2}
 					alt={icon.button2}
 					onClick={(e) => {
-						setImages(icon.gluePage);
-						setImageIcons(icon.iHaveGlue);
-						onPushAction(e, "play_audio", "iHaveAGlue");
+						imgClickHandler(e,{
+							actionType: 'fireEvent',
+							eventName: imgClickEventName,
+							eventData: {
+								images: icon.gluePage,
+								imageIcons:icon.iHaveGlue,
+								playAudio:"iHaveAGlue"
+							}
+						})
+						// setImages(icon.gluePage);
+						// setImageIcons(icon.iHaveGlue);
+						// onPushAction(e, "play_audio", "iHaveAGlue");
 					}}
 				></img>
 				<img
@@ -55,9 +110,19 @@ const ButtonClickMusic = (props) => {
 					src={icon.button3}
 					alt={icon.button3}
 					onClick={(e) => {
-						setImages(icon.scrissorPage);
-						setImageIcons(icon.iHaveScrissor);
-						onPushAction(e, "play_audio", "iHaveAScrissor");
+						imgClickHandler(e,{
+							actionType: 'fireEvent',
+							eventName: imgClickEventName,
+							eventData: {
+								images: icon.scrissorPage,
+								imageIcons:icon.iHaveScrissor,
+								playAudio:"iHaveAScrissor"
+							}
+						})
+
+						// setImages(icon.scrissorPage);
+						// setImageIcons(icon.iHaveScrissor);
+						// onPushAction(e, "play_audio", "iHaveAScrissor");
 					}}
 				></img>
 				<img
@@ -65,9 +130,19 @@ const ButtonClickMusic = (props) => {
 					src={icon.button4}
 					alt={icon.button4}
 					onClick={(e) => {
-						setImages(icon.paintPage);
-						setImageIcons(icon.iHavePaint);
-						onPushAction(e, "play_audio", "iHaveAPaint");
+						imgClickHandler(e,{
+							actionType: 'fireEvent',
+							eventName: imgClickEventName,
+							eventData: {
+								images: icon.paintPage,
+								imageIcons:icon.iHavePaint,
+								playAudio:"iHaveAPaint"
+							}
+						})
+
+						// setImages(icon.paintPage);
+						// setImageIcons(icon.iHavePaint);
+						// onPushAction(e, "play_audio", "iHaveAPaint");
 					}}
 				></img>
 			</div>

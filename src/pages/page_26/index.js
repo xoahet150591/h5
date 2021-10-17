@@ -7,6 +7,12 @@ import { setIntervalControlClass } from "helper/setTimeOutControlClass";
 const Page26 = (props) => {
 	const { currentPage, onPushAction } = props;
 
+	const imgClickEventName = 'Page26'
+
+	const imgClickHandler = (e,op)=>{
+        onPushAction(e,op.actionType,op)
+    }
+
 	const renderContent = () => {
 		return (
 			<div className="page26-wrapper">
@@ -18,7 +24,15 @@ const Page26 = (props) => {
 							onClick={(e) => {
 								e.target.classList.add("animation1");
 								setTimeout(() => {
-									onPushAction(e, "change_page", 27);
+									//onPushAction(e, "change_page", 27);
+									imgClickHandler(e,{
+										actionType: 'changePage',
+										eventName: imgClickEventName,
+										eventData: {
+											page:27,
+											step:0
+										}
+									})
 								}, 2000);
 							}}
 						/>
@@ -28,7 +42,15 @@ const Page26 = (props) => {
 							onClick={(e) => {
 								e.target.classList.add("animation2");
 								setTimeout(() => {
-									onPushAction(e, "change_page", 28);
+									//onPushAction(e, "change_page", 28);
+									imgClickHandler(e,{
+										actionType: 'changePage',
+										eventName: imgClickEventName,
+										eventData: {
+											page:28,
+											step:0
+										}
+									})
 								}, 2000);
 							}}
 						/>
@@ -38,7 +60,15 @@ const Page26 = (props) => {
 							onClick={(e) => {
 								e.target.classList.add("animation3");
 								setTimeout(() => {
-									onPushAction(e, "change_page", 29);
+									//onPushAction(e, "change_page", 29);
+									imgClickHandler(e,{
+										actionType: 'changePage',
+										eventName: imgClickEventName,
+										eventData: {
+											page:29,
+											step:0
+										}
+									})
 								}, 2000);
 							}}
 						/>
@@ -48,7 +78,15 @@ const Page26 = (props) => {
 							onClick={(e) => {
 								e.target.classList.add("animation4");
 								setTimeout(() => {
-									onPushAction(e, "change_page", 30);
+									//onPushAction(e, "change_page", 30);
+									imgClickHandler(e,{
+										actionType: 'changePage',
+										eventName: imgClickEventName,
+										eventData: {
+											page:30,
+											step:0
+										}
+									})
 								}, 2000);
 							}}
 						/>

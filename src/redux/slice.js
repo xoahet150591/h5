@@ -57,6 +57,18 @@ export const slice = createSlice({
 			state.page10.locationX = locationX;
 			state.page10.locationY = locationY;
 		},
+
+		setCurrentData:(state,action) => {
+            const { payload } = action;
+            for(let pKey in payload){
+                let pItem = payload[pKey];
+                if(Array.isArray(pItem)){
+                    state[pKey] = [...pItem];
+                }else {
+                    state[pKey] = pItem;
+                }
+            }
+        }
 	},
 });
 
@@ -70,6 +82,7 @@ export const {
 	setIsAudioEndOrPause,
 	setIsShowNextIcon,
 	configPage10,
+	setCurrentData
 } = slice.actions;
 
 export default slice.reducer;
